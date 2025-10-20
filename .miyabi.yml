@@ -1,0 +1,55 @@
+# Miyabi Configuration File
+version: "0.15.0"
+
+# GitHub Settings
+github:
+  owner: SeiSato0829
+  repo: miyabi-test-project
+  defaultBranch: main
+
+# Claude Model Settings
+claude:
+  model: claude-3-5-sonnet-20241022
+  maxTokens: 4096
+  temperature: 0.7
+
+# Agent Settings
+agents:
+  coordinator:
+    enabled: true
+    priority: high
+
+  codeGen:
+    enabled: true
+    priority: high
+
+  review:
+    enabled: true
+    priority: medium
+
+  pr:
+    enabled: true
+    priority: medium
+
+  deployment:
+    enabled: false
+    priority: low
+
+# Execution Settings
+execution:
+  maxRetries: 3
+  timeout: 300000
+  parallel:
+    enabled: true
+    maxConcurrency: 3
+
+# Logging
+logging:
+  level: info
+  file: miyabi.log
+
+# Feature Flags
+features:
+  autoMerge: false
+  autoDeploy: false
+  notifyOnComplete: true
